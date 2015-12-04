@@ -2,4 +2,16 @@
 
 <div data-hook="bbq-info" data-bbq="<%= params[:id] %>"></div>
 
+<div data-hook="bbq-item-form" data-bbq="<%= params[:id] %>">
+
+<% if @users.find_by(id: current_user.id) %>
+<h4>Add an item</h4>
+<form>
+  <input type='text' name='name' placeholder='name' id='new-item'>
+  <button type='submit' data-bbq="<%= params[:id] %>" id='btn-new-item'>Add!</button>
+</form>
+
+</div>
+
 <a href="<%= barbecues_path %>">Back to list of BBQs</a>
+<% end %>

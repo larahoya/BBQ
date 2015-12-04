@@ -6,8 +6,8 @@ class BarbecuesController < ApplicationController
   end
 
   def show
-    # Don't add any code to this show action.
-    # Implement your barbecue API in another action.
+    barbecue = Barbecue.find(params[:id])
+    @users = barbecue.users
   end
 
   def new
@@ -24,4 +24,32 @@ class BarbecuesController < ApplicationController
       redirect_to(barbecues_path)
     end
   end
+
+  def information
+    barbecue = Barbecue.find(params[:id])
+    render json: barbecue
+  end
+
+  def join
+    barbecue = Barbecue.find(params[:id])
+    user = User.find(current_user.id)
+    if barbecue.users.find_by(id: current_user.id) == nil && barbecue.users << user
+      render status: 200, json: user
+    else
+      render status: 404, json: {error: 'Error'}
+    end
+  end
+
+  def guests
+    barbecue = Barbecue.find(params[:id])
+    users = barbecue.users
+    render json: users
+  end
+
+  def items
+    barbecue = Barbecue.find(params[:id])
+    items = barbecue.items
+    render json: items
+  end
+
 end

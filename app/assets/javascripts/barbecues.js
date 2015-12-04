@@ -16,7 +16,7 @@
     var request = $.post('/api/barbecues/' + bbqId + '/join')
 
     request.fail(function () {
-      alert('Couldn’t join the barbecue. Try again later.')
+      alert('Couldn’t join the barbecue!')
       isJoining = false
     })
 
@@ -51,7 +51,48 @@
         '  <dd>' + bbq.venue + '</dd>',
         '</dl>'
       ]
+
       $bbqContainer.append(htmlParts.join('\n'))
+    })
+
+    var guests_request = $.get('/api/barbecues/' + bbqId + '/guests')
+
+    guests_request.fail(function() {
+
+    })
+
+    guests_request.done(function (users) {
+      if (users.length > 0) {
+        var htmlParts = ['<dl><dt>Guests</dt>']
+        users.forEach(function(user) {
+          htmlParts.push('<dd>' + user.name + '</dd>')
+        })
+        htmlParts.push('</dl>')
+        $bbqContainer.after(htmlParts.join('\n'))
+      } else {
+        $bbqContainer.after('No guests!')
+      }
+      
+    })
+
+    var items_request = $.get('/api/barbecues/' + bbqId + '/items')
+
+    items_request.fail(function(error) {
+      console.log(error);
+    })
+
+    items_request.done(function (items) {
+      if (items.length > 0) {
+        var htmlParts = ['<div><dl id="item-container"><dt>Items</dt>']
+        items.forEach(function(item) {
+          htmlParts.push('<dd>' + item.name + '</dd>')
+        })
+        htmlParts.push('</dl></div>')
+        $bbqContainer.after(htmlParts.join('\n'))
+      } else {
+        $bbqContainer.after('No items!')
+      }
+      
     })
   }
 })()
