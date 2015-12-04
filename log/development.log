@@ -1,0 +1,257 @@
+
+
+Started GET "/" for ::1 at 2015-12-04 09:37:03 +0100
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.0) lib/active_record/migration.rb:393:in `check_pending!'
+  activerecord (4.2.0) lib/active_record/migration.rb:374:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/larahoyatrujillo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/larahoyatrujillo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/larahoyatrujillo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/larahoyatrujillo/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (2.3ms)
+  Rendered /Users/larahoyatrujillo/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/larahoyatrujillo/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/larahoyatrujillo/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/larahoyatrujillo/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (61.2ms)
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "barbecues" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" datetime, "title" varchar, "venue" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (2.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150220021436')
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE "barbecues" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" datetime, "title" varchar, "venue" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (3.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150220021436')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "barbecues" ("date", "title", "venue", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["date", "2015-12-21 00:00:00.000000"], ["title", "South Dakota foes victory BBQ"], ["venue", "Medhurst, Hermann and Grant"], ["created_at", "2015-12-04 08:37:26.329934"], ["updated_at", "2015-12-04 08:37:26.329934"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "barbecues" ("date", "title", "venue", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["date", "2015-12-27 00:00:00.000000"], ["title", "Magnolia Koss Birthday BBQ"], ["venue", "Bosco-Welch"], ["created_at", "2015-12-04 08:37:26.342568"], ["updated_at", "2015-12-04 08:37:26.342568"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "barbecues" ("date", "title", "venue", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["date", "2015-12-12 00:00:00.000000"], ["title", "Sarai Schneider Birthday BBQ"], ["venue", "Daniel Group"], ["created_at", "2015-12-04 08:37:26.349453"], ["updated_at", "2015-12-04 08:37:26.349453"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barbecues" ("date", "title", "venue", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["date", "2015-12-27 00:00:00.000000"], ["title", "Missouri cattle victory BBQ"], ["venue", "Hermiston, Carter and Kshlerin"], ["created_at", "2015-12-04 08:37:26.356266"], ["updated_at", "2015-12-04 08:37:26.356266"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "barbecues" ("date", "title", "venue", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["date", "2015-12-11 00:00:00.000000"], ["title", "Mississippi vixens victory BBQ"], ["venue", "Armstrong-Watsica"], ["created_at", "2015-12-04 08:37:26.363060"], ["updated_at", "2015-12-04 08:37:26.363060"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "barbecues" ("date", "title", "venue", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["date", "2015-12-11 00:00:00.000000"], ["title", "Ohio elves victory BBQ"], ["venue", "Schuster, Braun and Runolfsdottir"], ["created_at", "2015-12-04 08:37:26.369052"], ["updated_at", "2015-12-04 08:37:26.369052"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barbecues" ("date", "title", "venue", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["date", "2015-12-17 00:00:00.000000"], ["title", "Daren Dare Birthday BBQ"], ["venue", "Lake Keon"], ["created_at", "2015-12-04 08:37:26.373886"], ["updated_at", "2015-12-04 08:37:26.373886"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barbecues" ("date", "title", "venue", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["date", "2015-12-13 00:00:00.000000"], ["title", "Kyleigh Okuneva Birthday BBQ"], ["venue", "Port Wilton"], ["created_at", "2015-12-04 08:37:26.379498"], ["updated_at", "2015-12-04 08:37:26.379498"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barbecues" ("date", "title", "venue", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["date", "2015-12-21 00:00:00.000000"], ["title", "Julia Little Birthday BBQ"], ["venue", "Lake Sabrynaland"], ["created_at", "2015-12-04 08:37:26.385051"], ["updated_at", "2015-12-04 08:37:26.385051"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "barbecues" ("date", "title", "venue", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["date", "2015-12-25 00:00:00.000000"], ["title", "Mrs. Tobin Beatty Birthday BBQ"], ["venue", "New Joshuaberg"], ["created_at", "2015-12-04 08:37:26.390655"], ["updated_at", "2015-12-04 08:37:26.390655"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2015-12-04 09:37:37 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BarbecuesController#index as HTML
+  [1m[35mBarbecue Load (0.3ms)[0m  SELECT "barbecues".* FROM "barbecues"  ORDER BY "barbecues"."date" ASC
+  Rendered barbecues/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 3012ms (Views: 3009.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application-f1bc9f4e14c0d85046182a8071e88b83.css?body=1" for ::1 at 2015-12-04 09:37:40 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-12-04 09:37:40 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-12-04 09:37:40 +0100
+
+
+Started GET "/assets/application-7d414ddbc3f0d3f3757d82e4689d0ed5.js?body=1" for ::1 at 2015-12-04 09:37:40 +0100
+
+
+Started GET "/assets/moment-66988874bf5714cb1e4a6f53d733b6e1.js?body=1" for ::1 at 2015-12-04 09:37:40 +0100
+
+
+Started GET "/assets/barbecues-eaaf9f34e46a7c9e8d93f22ef00c438d.js?body=1" for ::1 at 2015-12-04 09:37:40 +0100
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-12-04 09:37:40 +0100
+
+
+Started GET "/barbecues/5" for ::1 at 2015-12-04 09:38:18 +0100
+Processing by BarbecuesController#show as HTML
+  Parameters: {"id"=>"5"}
+  Rendered barbecues/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 44ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/barbecues/5" for ::1 at 2015-12-04 09:38:18 +0100
+
+ActionController::RoutingError (No route matches [GET] "/api/barbecues/5"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/larahoyatrujillo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/larahoyatrujillo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/larahoyatrujillo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/larahoyatrujillo/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /Users/larahoyatrujillo/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.text.erb (19.7ms)
+
+
+Started GET "/barbecues" for ::1 at 2015-12-04 09:38:22 +0100
+Processing by BarbecuesController#index as HTML
+  [1m[36mBarbecue Load (0.2ms)[0m  [1mSELECT "barbecues".* FROM "barbecues"  ORDER BY "barbecues"."date" ASC[0m
+  Rendered barbecues/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 36ms (Views: 35.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/barbecues/6" for ::1 at 2015-12-04 09:38:23 +0100
+Processing by BarbecuesController#show as HTML
+  Parameters: {"id"=>"6"}
+  Rendered barbecues/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 35ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/barbecues/6" for ::1 at 2015-12-04 09:38:24 +0100
+
+ActionController::RoutingError (No route matches [GET] "/api/barbecues/6"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/larahoyatrujillo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/larahoyatrujillo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/larahoyatrujillo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/larahoyatrujillo/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /Users/larahoyatrujillo/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.text.erb (16.2ms)
+
+
+Started GET "/barbecues" for ::1 at 2015-12-04 09:38:25 +0100
+Processing by BarbecuesController#index as HTML
+  [1m[35mBarbecue Load (0.2ms)[0m  SELECT "barbecues".* FROM "barbecues"  ORDER BY "barbecues"."date" ASC
+  Rendered barbecues/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 45ms (Views: 44.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/barbecues/5/join" for ::1 at 2015-12-04 09:39:10 +0100
+
+ActionController::RoutingError (No route matches [POST] "/api/barbecues/5/join"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/larahoyatrujillo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/larahoyatrujillo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/larahoyatrujillo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/larahoyatrujillo/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/larahoyatrujillo/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.text.erb (16.3ms)
+
+
+Started GET "/barbecues/new" for ::1 at 2015-12-04 09:39:14 +0100
+Processing by BarbecuesController#new as HTML
+  Rendered barbecues/new.html.erb within layouts/application (412.5ms)
+Completed 200 OK in 475ms (Views: 474.1ms | ActiveRecord: 0.0ms)
