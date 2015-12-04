@@ -48,8 +48,9 @@ class BarbecuesController < ApplicationController
 
   def items
     barbecue = Barbecue.find(params[:id])
-    items = barbecue.items
+    items = barbecue.items_user
     render json: items
   end
 
 end
+

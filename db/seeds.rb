@@ -18,6 +18,7 @@ end
 User.create(name: 'Lara', email: 'larascully@hotmail.com', password:12345678, password_confirmation:12345678)
 
 20.times do
-  name = [ Faker::Lorem.word].sample
-  Item.create(name: name, barbecue_id: rand(10) + 1)
+  name = [ Faker::Lorem.word ].sample
+  puts "#{name}"
+  Item.create(name: name, barbecue_id: rand(10)+1, user_id: rand(10)+1)
 end

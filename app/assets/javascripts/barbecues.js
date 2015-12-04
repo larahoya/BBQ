@@ -85,7 +85,7 @@
       if (items.length > 0) {
         var htmlParts = ['<div><dl id="item-container"><dt>Items</dt>']
         items.forEach(function(item) {
-          htmlParts.push('<dd>' + item.name + '</dd>')
+          htmlParts.push('<dd>' + item['name'] + '  (' + item['user'] + ')</dd>')
         })
         htmlParts.push('</dl></div>')
         $bbqContainer.after(htmlParts.join('\n'))

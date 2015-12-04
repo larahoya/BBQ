@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
   validates :name, presence:true
   has_many :barbecues, through: :participations
   has_many :participations
+  has_many :items
 
 end

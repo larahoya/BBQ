@@ -11,7 +11,7 @@ $('#btn-new-item').on('click', function(event) {
     data: {"name" : name},
     datatype: 'json',
     success: function(item) {
-      $('#item-container').append('<dd>' + item.name + '</dd>')
+      $('#item-container').append('<dd>' + item['name'] + '  (' + item['user'] + ')</dd>')
     }
   })
 })
