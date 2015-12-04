@@ -52,5 +52,12 @@ class BarbecuesController < ApplicationController
     render json: items
   end
 
+  def leave
+    barbecue = Barbecue.find(params[:id])
+    user = User.find(current_user.id)
+    barbecue.users.delete(user)
+    render status: 200, json: user
+  end
+
 end
 

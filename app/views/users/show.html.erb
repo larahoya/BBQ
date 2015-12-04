@@ -1,0 +1,8 @@
+<h1><%= current_user.name %></h1>
+
+<ul>
+<% @barbecues.each do |barbecue| %>
+  <li id="li-<%= barbecue.id %>"><%= barbecue.title %><a href="/" data-id="<%= barbecue.id %>" id='btn-leave'>Leave the barbecue</a></li>
+<% end %>
+</ul>
+

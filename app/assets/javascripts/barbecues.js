@@ -95,4 +95,20 @@
       
     })
   }
+
+  $('#btn-leave').on('click', function(event) {
+    event.preventDefault();
+    var $li = $(event.currentTarget).parent()
+    var bbqId = $('#btn-leave').data('id');
+    var request = $.get('/api/barbecues/' + bbqId + '/leave')
+
+    request.fail(function () {
+      alert('Couldn’t leave the barbecue!')
+    })
+
+    request.done(function () {
+      $li.remove();
+    })
+  
+  })
 })()

@@ -6,11 +6,13 @@ Rails.application.routes.draw do
   resources :barbecues, only: [ :index, :show, :new, :create ] do
     resources :items, only: [:create]
   end
+  resources :users, only: [:show]
 
   get '/api/barbecues/:id' => 'barbecues#information'
   post '/api/barbecues/:id/join' => 'barbecues#join'
   get '/api/barbecues/:id/guests' => 'barbecues#guests'
   get '/api/barbecues/:id/items' => 'barbecues#items'
   post '/api/barbecues/:id/items' => 'items#create'
+  get '/api/barbecues/:id/leave' => 'barbecues#leave'
 
 end
